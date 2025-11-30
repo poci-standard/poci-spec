@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PoCI – Proof of Correct Inference Standard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="PoCI (Proof of Correct Inference) is an open, neutral and immutable standard for verifying AI inferences with cryptographic integrity."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-main">PoCI</span>
+        <span class="logo-sub">Proof of Correct Inference</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#standard">Standard</a>
+        <a href="#docs">Docs</a>
+        <a href="#versions">Versions</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>PoCI – Proof of Correct Inference Standard</h1>
+          <p>
+            PoCI is an open, neutral and immutable standard for verifying AI inferences
+            with cryptographic integrity, without exposing inputs, outputs or model internals.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="docs/PoCI_Spec_v0.pdf" target="_blank" rel="noopener">
+              Download PoCI v0 (PDF)
+            </a>
+            <a class="btn secondary" href="https://github.com/PoCI/poci-spec" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS POCI -->
+    <section id="standard" class="section">
+      <div class="container">
+        <h2>What is PoCI?</h2>
+        <p>
+          PoCI (Proof of Correct Inference) is a technical standard that defines how to commit,
+          verify and audit AI inferences using cryptographic commitments, canonical hashing and
+          digital signatures. The goal is to make AI inferences auditable and trustworthy without
+          revealing sensitive data or proprietary models.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="section principles">
+      <div class="container">
+        <h2>Core Principles</h2>
+        <div class="principles-grid">
+          <div class="principle-card">
+            <h3>Neutrality</h3>
+            <p>PoCI is an open standard, independent from any single provider or implementation.</p>
+          </div>
+          <div class="principle-card">
+            <h3>Verifiability</h3>
+            <p>
+              Anyone can verify the integrity of a PoCI inference commit, using only the specification
+              and the cryptographic data.
+            </p>
+          </div>
+          <div class="principle-card">
+            <h3>Immutability</h3>
+            <p>
+              Commits are immutable by design: changing any field invalidates hashes and signatures.
+            </p>
+          </div>
+          <div class="principle-card">
+            <h3>Transparency</h3>
+            <p>
+              The rules of PoCI are public, simple and clearly specified in the standard document.
+            </p>
+          </div>
+          <div class="principle-card">
+            <h3>Bitcoin Arbitration (future)</h3>
+            <p>
+              Future versions of PoCI are designed to integrate with BitcoinOS (BOS) so that disputes
+              can be resolved with Bitcoin as final arbiter of computation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCS -->
+    <section id="docs" class="section">
+      <div class="container">
+        <h2>Documentation</h2>
+        <p>
+          The PoCI v0 specification is available in PDF and a concise Markdown form inside this repository.
+        </p>
+        <ul class="link-list">
+          <li>
+            <a href="docs/PoCI_Spec_v0.pdf" target="_blank" rel="noopener">
+              PoCI v0 Specification (PDF)
+            </a>
+          </li>
+          <li>
+            <a href="spec/poci_v0.md" target="_blank" rel="noopener">
+              PoCI v0 Specification (Markdown summary)
+            </a>
+          </li>
+          <li>
+            <a href="reference/glossary.md" target="_blank" rel="noopener">
+              Glossary
+            </a>
+          </li>
+          <li>
+            <a href="versions/VERSION_HISTORY.md" target="_blank" rel="noopener">
+              Version history
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VERSIONS -->
+    <section id="versions" class="section">
+      <div class="container">
+        <h2>Versions</h2>
+        <p>Current version: <strong>PoCI v0</strong></p>
+        <p>
+          PoCI v0 defines the minimal core:
+        </p>
+        <ul>
+          <li>PoCIModelDescriptor</li>
+          <li>PoCIInferenceCommit</li>
+          <li>Canonical hashing and signatures</li>
+          <li>Invariants and validation rules</li>
+          <li>Basic flows (register, commit, verify, challenge concept)</li>
+        </ul>
+        <p>
+          Future versions (v1, v2, ...) will extend the standard to include:
+        </p>
+        <ul>
+          <li>Integration with BOS / BitSNARK for dispute resolution (v1).</li>
+          <li>Optional ZKML proofs for partial or full verification of models (v2+).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About the PoCI Standard</h2>
+        <p>
+          PoCI is intended to be an open and neutral standard, similar in spirit to internet RFCs or
+          blockchain improvement proposals (BIPs/EIPs). The goal is to provide a common foundation
+          for auditable AI, especially in highly regulated sectors such as banking, healthcare or
+          public administration.
+        </p>
+        <p>
+          The specification is versioned and published publicly. Any implementation that conforms to
+          PoCI v0 MUST follow the invariants and structures described in the standard.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© PoCI Standard • Neutral • Open • Immutable</span>
+      <span>
+        Spec repository:
+        <a href="https://github.com/PoCI/poci-spec" target="_blank" rel="noopener">github.com/PoCI/poci-spec</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
