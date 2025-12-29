@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="PoCI (Proof of Correct Inference) is an open, neutral and immutable standard for verifying AI inferences with cryptographic integrity."
+    content="PoCI (Proof of Correct Inference) is an open, neutral and immutable technical standard for committing and verifying AI inferences with cryptographic integrity."
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -33,8 +33,8 @@
         <div class="hero-text">
           <h1>PoCI – Proof of Correct Inference Standard</h1>
           <p>
-            PoCI is an open, neutral and immutable standard for verifying AI inferences
-            with cryptographic integrity, without exposing inputs, outputs or model internals.
+            PoCI is an open, neutral and immutable technical standard for committing and verifying
+            AI inferences with cryptographic integrity, without revealing inputs, outputs or model internals.
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="docs/PoCI_Spec_v0_RFC.pdf" target="_blank" rel="noopener">
@@ -58,6 +58,34 @@
           digital signatures. The goal is to make AI inferences auditable and trustworthy without
           revealing sensitive data or proprietary models.
         </p>
+
+        <!-- SCOPE -->
+        <h3>Scope</h3>
+        <ul>
+          <li>
+            PoCI specifies data structures and cryptographic rules to produce verifiable inference commits.
+          </li>
+          <li>
+            PoCI enables independent verification of inference integrity using the public specification and cryptographic data.
+          </li>
+          <li>
+            PoCI is intentionally implementation-agnostic: it defines what must be true for a commit to be valid, not how systems are built.
+          </li>
+        </ul>
+
+        <!-- NON-GOALS -->
+        <h3>Non-goals</h3>
+        <ul>
+          <li>
+            PoCI does not evaluate whether an output is correct, fair, safe or desirable.
+          </li>
+          <li>
+            PoCI does not require revealing inputs, outputs, weights, architecture or proprietary model internals.
+          </li>
+          <li>
+            PoCI does not prescribe networks, tokens, incentives, or dispute/execution infrastructures.
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -73,8 +101,8 @@
           <div class="principle-card">
             <h3>Verifiability</h3>
             <p>
-              Anyone can verify the integrity of a PoCI inference commit, using only the specification
-              and the cryptographic data.
+              Anyone can verify the integrity of a PoCI inference commit using only the specification
+              and cryptographic data, without requiring trust in the provider.
             </p>
           </div>
           <div class="principle-card">
@@ -89,13 +117,6 @@
               The rules of PoCI are public, simple and clearly specified in the standard document.
             </p>
           </div>
-          <div class="principle-card">
-            <h3>Bitcoin Arbitration (future)</h3>
-            <p>
-              Future versions of PoCI are designed to integrate with BitcoinOS (BOS) so that disputes
-              can be resolved with Bitcoin as final arbiter of computation.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -105,7 +126,7 @@
       <div class="container">
         <h2>Documentation</h2>
         <p>
-          The PoCI v0 specification is available in PDF and a concise Markdown form inside this repository.
+          The PoCI v0 specification is available as a PDF (normative reference) and as a concise Markdown summary.
         </p>
         <ul class="link-list">
           <li>
@@ -137,9 +158,8 @@
       <div class="container">
         <h2>Versions</h2>
         <p>Current version: <strong>PoCI v0</strong></p>
-        <p>
-          PoCI v0 defines the minimal core:
-        </p>
+
+        <p>PoCI v0 defines the minimal core:</p>
         <ul>
           <li>PoCIModelDescriptor</li>
           <li>PoCIInferenceCommit</li>
@@ -147,13 +167,12 @@
           <li>Invariants and validation rules</li>
           <li>Basic flows (register, commit, verify, challenge concept)</li>
         </ul>
+
         <p>
-          Future versions (v1, v2, ...) will extend the standard to include:
+          Future versions may extend the standard in a backward-compatible manner without invalidating existing commits.
+          Extensions may include optional interfaces for dispute handling and additional proof attachments, while remaining
+          implementation-agnostic.
         </p>
-        <ul>
-          <li>Integration with BOS / BitSNARK for dispute resolution (v1).</li>
-          <li>Optional ZKML proofs for partial or full verification of models (v2+).</li>
-        </ul>
       </div>
     </section>
 
@@ -169,7 +188,10 @@
         </p>
         <p>
           The specification is versioned and published publicly. Any implementation that conforms to
-          PoCI v0 MUST follow the invariants and structures described in the standard.
+          PoCI v0 MUST follow the invariants and structures described in the normative specification.
+        </p>
+        <p>
+          PoCI is intentionally implementation-agnostic.
         </p>
       </div>
     </section>
